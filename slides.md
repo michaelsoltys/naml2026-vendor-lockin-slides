@@ -406,7 +406,7 @@ Vendor Independence Works at Operational Scale
 
 - Vendor-agnostic data integration across **50+ sources**
 - Availability **>99.5%** across multiple vendor environments
-- Tactical decision-making latencies met
+- Tactical decision-making latencies are met
 
 </div>
 
