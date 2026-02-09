@@ -69,9 +69,7 @@ Vendor lock-in occurs when the cost of switching away from a vendor becomes proh
 
 ---
 
-# The $112 Million Lesson
-
-## <span style="color: #6b21a8;">USDA Case Study (2021)</span>
+# The $112 Million Lesson - USDA Case Study (2021)
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -123,7 +121,7 @@ This is the number that makes the risk concrete. The USDA — a civilian agency 
 
 ### <span style="color: #6b21a8;">Platform Lock-In</span>
 
-Training, inference, and deployment tied to a specific cloud ecosystem (AWS Bedrock/SageMaker, Azure OpenAI, Google Vertex AI)
+Training, inference, and deployment tied to a specific cloud ecosystem (Azure OpenAI, AWS Bedrock/SageMaker, Google Vertex AI)
 
 </div>
 
@@ -155,8 +153,8 @@ Teams specialized in vendor-specific tools and APIs; organizational inertia rein
 
 <v-click>
 
-<div class="bg-blue-100 dark:bg-blue-900 p-4 rounded mt-4 text-center text-xl font-bold">
-These four types compound each other — together, they create a trap
+<div class="bg-blue-100 dark:bg-blue-900 p-4 rounded mt-4 text-center text-xl">
+These four types compound each other — together, they create lock-in
 </div>
 
 </v-click>
@@ -205,9 +203,9 @@ The defense environment makes all four types of lock-in worse. You can't easily 
 
 ---
 
-# Policy Mandate: Hegseth Acquisition Reforms
+# Policy Mandate: Sec Hegseth Acquisition Reforms
 
-## <span style="color: #6b21a8;">November 7, 2025 — Secretary Hegseth, National War College</span>
+November 7, 2025 — Secretary Hegseth, National War College
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 
@@ -296,7 +294,7 @@ This is a game-changer. In November 2025, Secretary Hegseth made vendor lock-in 
 
 <v-click>
 
-<div class="bg-blue-100 dark:bg-blue-900 p-4 rounded mt-6 text-center text-xl font-bold">
+<div class="bg-blue-100 dark:bg-blue-900 p-4 rounded mt-6 text-center text-xl">
 These are mature, production-ready technologies — not research projects
 </div>
 
@@ -359,53 +357,33 @@ The technical strategies only work if your contracts support them. Modular contr
 -->
 
 ---
-layout: center
----
 
 # Five Things to Require in Your Next AI Solicitation
-
-<div class="text-3xl font-bold text-center text-blue-600 mt-8">
-The actionable takeaway
-</div>
 
 <!--
 This is the slide I want you to remember. If you take nothing else away from this talk, put these five requirements into your next AI solicitation.
 -->
 
----
-
-# The Checklist
-
 <v-clicks>
 
-<div class="border-2 border-blue-500 p-3 rounded mb-3">
-
-**1. Containerized Delivery** — Require all AI/ML models delivered as Docker containers deployable on any Kubernetes cluster, not tied to a specific cloud runtime.
-
+<div class="border-l-4 border-blue-500 pl-3 py-1 mb-2">
+<strong>1. Containerized Delivery</strong> — Docker containers on any Kubernetes cluster, not tied to one cloud
 </div>
 
-<div class="border-2 border-yellow-500 p-3 rounded mb-3">
-
-**2. Open Model Formats** — Require model exports in ONNX or equivalent open standards, so trained models can run on alternative inference engines without vendor involvement.
-
+<div class="border-l-4 border-yellow-500 pl-3 py-1 mb-2">
+<strong>2. Open Model Formats</strong> — ONNX or equivalent, so models run on alternative inference engines
 </div>
 
-<div class="border-2 border-green-500 p-3 rounded mb-3">
-
-**3. Government Data Rights** — Explicitly retain unlimited rights to all training data, model weights, training parameters, and source code developed under the contract.
-
+<div class="border-l-4 border-green-500 pl-3 py-1 mb-2">
+<strong>3. Government Data Rights</strong> — Unlimited rights to training data, model weights, and source code
 </div>
 
-<div class="border-2 border-purple-500 p-3 rounded mb-3">
-
-**4. Infrastructure-as-Code** — Require infrastructure definitions in Terraform or equivalent, so the deployment environment can be reproduced on a different provider.
-
+<div class="border-l-4 border-purple-500 pl-3 py-1 mb-2">
+<strong>4. Infrastructure-as-Code</strong> — Terraform or equivalent, reproducible on any provider
 </div>
 
-<div class="border-2 border-red-500 p-3 rounded mb-3">
-
-**5. Demonstrated Portability** — Require vendors to demonstrate their solution deploys and passes acceptance tests on at least two different cloud environments before final acceptance.
-
+<div class="border-l-4 border-red-500 pl-3 py-1 mb-2">
+<strong>5. Demonstrated Portability</strong> — Must deploy and pass tests on at least two environments
 </div>
 
 </v-clicks>
@@ -418,7 +396,7 @@ Number one: containerized delivery. Docker containers on Kubernetes, not tied to
 
 # Lessons from DoW Programs
 
-## <span style="color: #6b21a8;">Vendor Independence Works at Operational Scale</span>
+Vendor Independence Works at Operational Scale
 
 <div class="grid grid-cols-3 gap-4 mt-6">
 
@@ -453,14 +431,6 @@ Number one: containerized delivery. Docker containers on Kubernetes, not tied to
 </div>
 
 </div>
-
-<v-click>
-
-<div class="text-xl font-bold text-center mt-6 text-green-600">
-These implementations validate that dual-source requirements are technically feasible and operationally advantageous
-</div>
-
-</v-click>
 
 <!--
 These aren't hypothetical strategies — they're working in production today. The CDAO's GIDE program integrates data from over 50 sources using vendor-agnostic layers, achieving 99.5% availability. The Army runs a true multi-cloud strategy across all three major providers. And the Navy's approach of buying outcomes rather than platforms has kept follow-on competition robust. These programs prove that vendor independence doesn't compromise mission effectiveness — it enhances it.
