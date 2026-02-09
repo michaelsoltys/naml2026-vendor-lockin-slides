@@ -39,7 +39,7 @@ layout: center
 
 # The Problem: Vendor Lock-In
 
-<div class="text-3xl font-bold text-center text-red-600">
+<div class="text-2xl italic text-left" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
 Switching costs become so high that you're trapped with a single vendor
 </div>
 
@@ -57,10 +57,8 @@ Switching costs become so high that you're trapped with a single vendor
 
 <v-click>
 
-<div class="bg-blue-100 dark:bg-blue-900 p-4 rounded mt-6 text-center text-xl">
-
-> *What begins as a useful tool can become an "iron cage" of constraint.* — Max Weber
-
+<div class="mt-6 text-xl italic text-left" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
+"What begins as a useful tool can become an iron cage of constraint." — Max Weber
 </div>
 
 </v-click>
@@ -105,7 +103,7 @@ For defense AI — classified data, mission-critical uptime, proprietary model w
 
 <v-click>
 
-<div class="text-2xl font-bold text-center mt-6 text-red-600">
+<div class="text-2xl italic text-left mt-6" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
 If commodity software costs $112M to escape, what does defense AI lock-in cost?
 </div>
 
@@ -247,8 +245,8 @@ The defense environment makes all four types of lock-in worse. You can't easily 
 
 <v-click>
 
-<div class="text-2xl font-bold text-center mt-6 text-red-600">
-"Maintain at least two qualified sources for critical program content"
+<div class="text-2xl italic text-left mt-6" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
+"Maintain at least two qualified sources for critical program content" — Secretary Hegseth
 </div>
 
 </v-click>
