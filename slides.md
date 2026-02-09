@@ -1,15 +1,28 @@
 ---
-theme: seriph
-title: Avoiding Vendor Lock-In in AI Procurement for the DoW
+theme: default
+class: text-center
+highlighter: shiki
+lineNumbers: true
 info: |
+  ## Avoiding Vendor Lock-In in AI Procurement for the DoW
   NAML 2026 — 10th Annual Workshop on Naval Applications of Machine Learning
   March 2–3, 2026 · San Diego, California
-author: Sam Bright, William Emeny, Alan Jaeger, Adam Larson, JP Lueck, Michael Soltys
-keywords: vendor lock-in, AI procurement, machine learning, platform independence
-class: text-center
+drawings:
+  persist: false
 transition: slide-left
+title: Avoiding Vendor Lock-In in AI Procurement for the DoW
 mdc: true
 ---
+
+<style>
+.slidev-layout.cover {
+  background: white !important;
+  color: black !important;
+}
+.slidev-layout.cover h1 {
+  color: black !important;
+}
+</style>
 
 # Avoiding Vendor Lock-In in AI Procurement for the DoW
 
