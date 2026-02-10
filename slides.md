@@ -19,6 +19,8 @@ mdc: true
 
 **Strategies for ML Platform Independence in Naval AI Systems**
 
+Presented by **William Emeny** & **Michael Soltys**
+
 Sam Bright · William Emeny · Alan Jaeger · Adam Larson · JP Lueck · Michael Soltys
 
 GBL Systems Corp. · NSWC Port Hueneme Division
@@ -30,41 +32,39 @@ GBL Systems Corp. · NSWC Port Hueneme Division
 </div>
 
 <!--
-Welcome everyone. We're here to talk about a problem that affects every naval organization procuring AI and ML systems: vendor lock-in. We'll cover why it's a critical risk, what the new policy mandates require, and — most importantly — give you five concrete things you can put into your next AI solicitation to protect against it.
+William opens. Welcome everyone. We're William Emeny and Michael Soltys, and we're here to talk about a problem that affects every naval organization procuring AI and ML systems: vendor lock-in. William will frame the problem — what vendor lock-in is, how it has evolved, and why today's AI systems make it worse. Then Michael will present solutions — policy, technical strategies, and five concrete things you can put into your next solicitation.
 -->
 
 ---
-layout: center
----
 
-# The Problem: Vendor Lock-In
+# What is Vendor Lock-In?
 
-<div class="text-2xl italic text-left" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
-Switching costs become so high that you're trapped with a single vendor
-</div>
+## <span style="color: #6b21a8;">Defining the Problem for Defense AI</span>
 
-<v-click>
+<v-clicks>
 
-<div class="mt-8 text-xl">
+- **Vendor lock-in** occurs when switching costs become so high that an organization is effectively trapped with a single provider
+- In our paper, we define it across **four dimensions**: platform, data, model, and expertise dependencies
+- For the DoW, lock-in threatens:
+  - **Technological sovereignty** — losing control of critical AI capabilities
+  - **Competition** — sole-source positioning lets vendors increase prices and reduce service
+  - **Operational flexibility** — inability to adapt systems as threats evolve
+  - **Innovation access** — locked out of better solutions from other vendors
 
-- Dependencies limit competition, innovation, and operational flexibility
-- AI/ML systems create *deeper* lock-in than traditional IT
-- Models can become inseparable from their training platforms
-
-</div>
-
-</v-click>
+</v-clicks>
 
 <v-click>
 
-<div class="mt-6 text-xl italic text-left" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
+<div class="text-2xl italic text-left mt-4" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
 "What begins as a useful tool can become an iron cage of constraint." — Max Weber
 </div>
 
 </v-click>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">WE</div>
+
 <!--
-Vendor lock-in occurs when the cost of switching away from a vendor becomes prohibitively high. This isn't new — but AI makes it worse. Unlike traditional software, ML models can become deeply entangled with their training platforms, creating dependencies that go beyond just APIs into the realm of intellectual property and algorithmic competence. Weber's "iron cage" metaphor is apt: the tools we adopt to increase capability can become the very constraints that limit us.
+Let me start by defining what we mean by vendor lock-in in the context of our paper. At its core, it's about switching costs becoming so high that you're effectively trapped. For defense AI, the stakes are uniquely high — we're talking about technological sovereignty, competition for taxpayer dollars, and the ability to adapt our systems as threats change. Weber's iron cage metaphor captures it well: the tools we adopt for capability can become the constraints that limit us.
 -->
 
 ---
@@ -107,8 +107,95 @@ If commodity software costs $112M to escape, what does defense AI lock-in cost?
 
 </v-click>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">WE</div>
+
 <!--
-This is the number that makes the risk concrete. The USDA — a civilian agency dealing with commodity office software — found that switching would cost MORE than the $112 million premium they were already paying. Now imagine that in the context of naval AI systems with classified training data, real-time inference requirements for weapon systems, and FedRAMP security controls. The switching costs are orders of magnitude higher.
+This is the case study that makes the risk concrete. The USDA — a civilian agency dealing with commodity office software — found that switching would cost MORE than the $112 million premium they were already paying. Retraining, converting workflows, rebuilding integrations. And that's just email and documents. Now imagine defense AI systems with classified training data, real-time inference for weapon systems, and FedRAMP security controls. The switching costs are orders of magnitude higher.
+-->
+
+---
+
+# Historical Context: Lock-In Through the Decades
+
+## <span style="color: #6b21a8;">How Has Lock-In Presented Itself in Past Architectures?</span>
+
+<v-clicks>
+
+- **1960s–80s: Mainframe era** — IBM's proprietary hardware and software created total dependency; migrating off a mainframe meant rebuilding everything from scratch
+
+- **1990s: Client-server** — Microsoft and Oracle established dominance through proprietary protocols, file formats, and database engines that resisted interoperability
+
+- **2000s: Enterprise software** — ERP and CRM vendors (SAP, Salesforce) created lock-in through deeply customized implementations and proprietary data models
+
+- **2010s: Cloud computing** — AWS, Azure, and Google Cloud offered powerful services, but each with proprietary APIs, storage formats, and management tools
+
+</v-clicks>
+
+<v-click>
+
+<div class="text-2xl italic text-left mt-4" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
+Each technology wave created new opportunities for vendors to establish proprietary dominance
+</div>
+
+</v-click>
+
+<div class="abs-br m-6 text-sm opacity-50 font-bold">WE</div>
+
+<!--
+Vendor lock-in isn't new — it has been a recurring pattern across every major technology transition. In the mainframe era, you were locked to IBM's hardware and software. Client-server brought Microsoft and Oracle dominance through proprietary protocols. Enterprise software like SAP created lock-in through deep customization. Cloud computing repeated the pattern with proprietary APIs. Each wave, vendors found new ways to make switching prohibitively expensive. The question is: what makes the current AI wave different?
+-->
+
+---
+
+# What Does Lock-In Look Like Today?
+
+## <span style="color: #6b21a8;">Key Vulnerabilities in Modern AI Architectures</span>
+
+<div class="grid grid-cols-2 gap-6 mt-4">
+
+<div>
+
+### <span style="color: #6b21a8;">Deeper Than Before</span>
+
+<v-clicks>
+
+- AI creates dependencies beyond software interfaces — into **intellectual property and algorithmic competence**
+- Models trained on proprietary platforms can become **inseparable** from their training environments
+- Vendor-specific optimization means performance degrades on migration
+
+</v-clicks>
+
+</div>
+
+<div>
+
+### <span style="color: #6b21a8;">The Cloud AI Ecosystem Trap</span>
+
+<v-clicks>
+
+- **AWS**: Bedrock, SageMaker, Rekognition
+- **Azure**: OpenAI Service, Azure ML, Cognitive Services
+- **Google**: Vertex AI, AutoML, specialized NLP APIs
+- Each integrates seamlessly *within* its ecosystem while creating friction for cross-platform migration
+
+</v-clicks>
+
+</div>
+
+</div>
+
+<v-click>
+
+<div class="bg-blue-100 dark:bg-blue-900 p-4 rounded mt-4 text-center text-xl">
+Unlike previous waves, AI lock-in extends into the models themselves — not just the infrastructure
+</div>
+
+</v-click>
+
+<div class="abs-br m-6 text-sm opacity-50 font-bold">WE</div>
+
+<!--
+What makes AI lock-in fundamentally different from previous technology waves? It's deeper. Previous lock-in was about interfaces, APIs, file formats. AI lock-in goes into the models themselves — into intellectual property and algorithmic competence. A model trained on a proprietary platform may literally not work the same way when you move it. And every major cloud provider has built comprehensive AI ecosystems designed to work beautifully together — but only within their own platform. Moving between them creates enormous friction.
 -->
 
 ---
@@ -159,8 +246,10 @@ These four types compound each other — together, they create lock-in
 
 </v-click>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">WE</div>
+
 <!--
-Lock-in manifests in four distinct ways, and they compound each other. Platform lock-in is the most visible — you're on AWS or Azure and your whole pipeline depends on their services. But data lock-in is often more insidious — your training data is structured around vendor-specific storage. Model lock-in means your trained models can't easily move. And expertise lock-in means your people only know how to work with one vendor's tools. Each of these alone creates friction; together, they create a trap.
+In our paper we identify four distinct types of AI vendor lock-in, and they compound each other. Platform lock-in is the most visible — your whole pipeline depends on one cloud. Data lock-in is often more insidious — your training data is structured around vendor-specific storage. Model lock-in means your trained models can't easily move. And expertise lock-in means your people only know one vendor's tools. Each alone creates friction; together, they create a trap. I'll now hand it over to Michael to discuss the solutions.
 -->
 
 ---
@@ -197,8 +286,10 @@ Good news: CDAO has already proven vendor-agnostic approaches work at DoW scale
 
 </v-click>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">WE</div>
+
 <!--
-The defense environment makes all four types of lock-in worse. You can't easily evaluate alternatives when your data is classified. Only cleared vendors can compete, which shrinks the market. And when AI systems drive combat decisions, nobody wants to risk platform changes that could introduce instability. There's also a human factor — people develop trust in the specific behaviors and quirks of a model. That trust doesn't transfer easily. Even the DoW's own open source memo acknowledges that vendor lock-in can happen even with open-source software.
+The defense environment makes all four types of lock-in worse. Classification limits your ability to evaluate alternatives. Clearances shrink the vendor pool. Mission-critical reliability makes everyone risk-averse. And long procurement cycles mean decisions made years ago still constrain you today. Even the DoW's own open source memo acknowledges that lock-in can happen with open-source software. But there is good news — CDAO has already proven this is solvable. And with that, I'll hand it over to Michael to discuss the policy mandates and technical solutions.
 -->
 
 ---
@@ -249,8 +340,10 @@ November 7, 2025 — Secretary Hegseth, National War College
 
 </v-click>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">MS</div>
+
 <!--
-This is a game-changer. In November 2025, Secretary Hegseth made vendor lock-in avoidance a mandatory structural requirement — not just a nice-to-have. The key is requirement number three: maintain at least two qualified sources for critical program content, specifically to prevent vendor lock-in. The new PAE structure ties executive compensation to competition and speed, creating institutional incentives for vendor independence. This means the strategies we're about to discuss aren't optional — they're what the policy now demands.
+Thanks William. So now that we understand the problem, what's being done about it? In November 2025, Secretary Hegseth made vendor lock-in avoidance a mandatory structural requirement — not just a nice-to-have. The key is requirement number three: maintain at least two qualified sources for critical program content. The new PAE structure ties executive compensation to competition and speed. This means the strategies I'm about to discuss aren't optional — they're what the policy now demands.
 -->
 
 ---
@@ -300,8 +393,10 @@ These are mature, production-ready technologies — not research projects
 
 </v-click>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">MS</div>
+
 <!--
-Here are the technical building blocks. Containerization through Docker and Kubernetes gives you portable ML environments — train on one platform, deploy on another. ONNX provides a universal model format so your trained models aren't locked to PyTorch or TensorFlow. MLflow handles experiment tracking without vendor tie-in. Apache Iceberg gives you data lakes that work with multiple analytics engines. Terraform lets you define your infrastructure once and deploy it anywhere. And standard REST APIs with OpenAPI specs let you swap out backends. None of these are exotic — they're mature, production-ready technologies.
+Here are the technical building blocks. Containerization through Docker and Kubernetes gives you portable ML environments — train on one platform, deploy on another. ONNX provides a universal model format so your trained models aren't locked to PyTorch or TensorFlow. MLflow handles experiment tracking without vendor tie-in. Apache Iceberg gives you vendor-neutral data lakes. Terraform lets you define your infrastructure once and deploy it anywhere. These aren't exotic — they're mature, production-ready technologies.
 -->
 
 ---
@@ -352,8 +447,10 @@ Technical strategies only work if contracts support them
 
 </v-click>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">MS</div>
+
 <!--
-The technical strategies only work if your contracts support them. Modular contracting breaks big AI projects into pieces — so you're not locked into one vendor for the whole thing. Data rights are critical — you MUST retain unlimited rights to training data, model weights, and source code developed under the contract. And performance-based contracting focuses on outcomes — accuracy and availability — not on which vendor's platform you use. This preserves your ability to compete follow-on work.
+The technical strategies only work if your contracts support them. Modular contracting breaks big AI projects into pieces — so you're not locked into one vendor for the whole thing. Data rights are critical — you MUST retain unlimited rights to training data, model weights, and source code. And performance-based contracting focuses on outcomes — accuracy and availability — not on which vendor's platform you use.
 -->
 
 ---
@@ -388,8 +485,10 @@ This is the slide I want you to remember. If you take nothing else away from thi
 
 </v-clicks>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">MS</div>
+
 <!--
-Number one: containerized delivery. Docker containers on Kubernetes, not tied to one cloud. Number two: open model formats — ONNX or equivalent so you can move models between inference engines. Number three: government data rights — you own the training data, model weights, and source code. Number four: infrastructure-as-code — Terraform or equivalent so you can reproduce the environment anywhere. And number five: demonstrated portability — make the vendor prove it works on at least two different environments before you accept delivery. These five requirements are concrete, enforceable, and directly enable compliance with the new dual-source mandates.
+If you take nothing else away from this talk, put these five requirements into your next AI solicitation. Containerized delivery. Open model formats. Government data rights. Infrastructure-as-code. And demonstrated portability — make the vendor prove it works on at least two environments before you accept delivery. These are concrete, enforceable, and directly enable compliance with the dual-source mandates.
 -->
 
 ---
@@ -432,8 +531,10 @@ Vendor Independence Works at Operational Scale
 
 </div>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">MS</div>
+
 <!--
-These aren't hypothetical strategies — they're working in production today. The CDAO's GIDE program integrates data from over 50 sources using vendor-agnostic layers, achieving 99.5% availability. The Army runs a true multi-cloud strategy across all three major providers. And the Navy's approach of buying outcomes rather than platforms has kept follow-on competition robust. These programs prove that vendor independence doesn't compromise mission effectiveness — it enhances it.
+These aren't hypothetical strategies — they're working in production today. The CDAO's GIDE program integrates data from over 50 sources using vendor-agnostic layers, achieving 99.5% availability. The Army runs a true multi-cloud strategy across all three major providers. And the Navy's approach of buying outcomes rather than platforms has kept follow-on competition robust.
 -->
 
 ---
@@ -486,6 +587,8 @@ The question isn't whether to pursue vendor independence — it's how fast you c
 <strong>GBL Systems Corp. · NSWC Port Hueneme Division</strong>
 </div>
 
+<div class="abs-br m-6 text-sm opacity-50 font-bold">MS</div>
+
 <!--
-To wrap up: vendor independence in AI procurement is both technically achievable and now mandated by policy. The tools are mature — containerization, ONNX, Terraform, open data formats. The policy is clear — dual-source requirements, PAEs with competition incentives. And the DoW programs we showed demonstrate it works at operational scale. Remember the five things for your next solicitation. We're happy to take questions.
+To wrap up: vendor independence in AI procurement is both technically achievable and now mandated by policy. The tools are mature — containerization, ONNX, Terraform, open data formats. The policy is clear — dual-source requirements, PAEs with competition incentives. Remember the five things for your next solicitation. We're happy to take questions.
 -->
