@@ -19,17 +19,9 @@ mdc: true
 
 **Strategies for ML Platform Independence in Naval AI Systems**
 
-Presented by **William Emeny** & **Michael Soltys**
-
 Sam Bright · William Emeny · Alan Jaeger · Adam Larson · JP Lueck · Michael Soltys
 
 GBL Systems Corp. · NSWC Port Hueneme Division
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
 
 <!--
 William opens. Welcome everyone. We're William Emeny and Michael Soltys, and we're here to talk about a problem that affects every naval organization procuring AI and ML systems: vendor lock-in. William will frame the problem — what vendor lock-in is, how it has evolved, and why today's AI systems make it worse. Then Michael will present solutions — policy, technical strategies, and five concrete things you can put into your next solicitation.
@@ -39,23 +31,41 @@ William opens. Welcome everyone. We're William Emeny and Michael Soltys, and we'
 
 # What is Vendor Lock-In?
 
-## <span style="color: #6b21a8;">Defining the Problem for Defense AI</span>
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+### <span style="color: #6b21a8;">Defining the Problem</span>
 
 <v-clicks>
 
-- **Vendor lock-in** occurs when switching costs become so high that an organization is effectively trapped with a single provider
-- In our paper, we define it across **four dimensions**: platform, data, model, and expertise dependencies
-- For the DoW, lock-in threatens:
-  - **Technological sovereignty** — losing control of critical AI capabilities
-  - **Competition** — sole-source positioning lets vendors increase prices and reduce service
-  - **Operational flexibility** — inability to adapt systems as threats evolve
-  - **Innovation access** — locked out of better solutions from other vendors
+- Switching costs become so high that an organization is effectively **trapped** with a single provider
+- We define it across **four dimensions**: platform, data, model, and expertise dependencies
 
 </v-clicks>
 
+</div>
+
+<div>
+
+### <span style="color: #6b21a8;">Impact on the DoW</span>
+
+<v-clicks>
+
+- **Technological sovereignty** — losing control of critical AI capabilities
+- **Competition** — sole-source lets vendors increase prices
+- **Operational flexibility** — inability to adapt as threats evolve
+- **Innovation access** — locked out of better solutions
+
+</v-clicks>
+
+</div>
+
+</div>
+
 <v-click>
 
-<div class="text-2xl italic text-left mt-4" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
+<div class="text-2xl italic text-left mt-6" style="color: #2E7D32; border-left: 4px solid #2E7D32; padding-left: 16px;">
 "What begins as a useful tool can become an iron cage of constraint." — Max Weber
 </div>
 
@@ -90,8 +100,8 @@ Migrating would have required:
 
 ### <span style="color: #6b21a8;">Why This Matters for Defense AI</span>
 
-- This was <span style="background-color: #ffe4e1; padding: 2px 6px; border-radius: 3px;">commodity office software</span>
-- Not mission-critical AI
+- This was commodity office software
+- Not <span style="background-color: #ffe4e1; padding: 2px 6px; border-radius: 3px;">mission-critical AI</span>
 
 For defense AI — classified data, mission-critical uptime, proprietary model weights, security requirements — switching barriers are **orders of magnitude** greater.
 
@@ -117,17 +127,17 @@ This is the case study that makes the risk concrete. The USDA — a civilian age
 
 # Historical Context: Lock-In Through the Decades
 
-## <span style="color: #6b21a8;">How Has Lock-In Presented Itself in Past Architectures?</span>
+How Has Lock-In Presented Itself in Past Architectures?
 
 <v-clicks>
 
-- **1960s–80s: Mainframe era** — IBM's proprietary hardware and software created total dependency; migrating off a mainframe meant rebuilding everything from scratch
+- <strong style="color: #6b21a8;">1960s–80s: Mainframe era</strong> — IBM's proprietary hardware and software created total dependency; migrating off a mainframe meant rebuilding everything from scratch
 
-- **1990s: Client-server** — Microsoft and Oracle established dominance through proprietary protocols, file formats, and database engines that resisted interoperability
+- <strong style="color: #6b21a8;">1990s: Client-server</strong> — Microsoft and Oracle established dominance through proprietary protocols, file formats, and database engines that resisted interoperability
 
-- **2000s: Enterprise software** — ERP and CRM vendors (SAP, Salesforce) created lock-in through deeply customized implementations and proprietary data models
+- <strong style="color: #6b21a8;">2000s: Enterprise software</strong> — ERP and CRM vendors (SAP, Salesforce) created lock-in through deeply customized implementations and proprietary data models
 
-- **2010s: Cloud computing** — AWS, Azure, and Google Cloud offered powerful services, but each with proprietary APIs, storage formats, and management tools
+- <strong style="color: #6b21a8;">2010s: Cloud computing</strong> — AWS, Azure, and Google Cloud offered powerful services, but each with proprietary APIs, storage formats, and management tools
 
 </v-clicks>
 
@@ -149,7 +159,7 @@ Vendor lock-in isn't new — it has been a recurring pattern across every major 
 
 # What Does Lock-In Look Like Today?
 
-## <span style="color: #6b21a8;">Key Vulnerabilities in Modern AI Architectures</span>
+Key Vulnerabilities in Modern AI Architectures
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
@@ -187,7 +197,7 @@ Vendor lock-in isn't new — it has been a recurring pattern across every major 
 <v-click>
 
 <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded mt-4 text-center text-xl">
-Unlike previous waves, AI lock-in extends into the models themselves — not just the infrastructure
+Unlike previous waves, AI lock-in extends into models themselves — not just infrastructure
 </div>
 
 </v-click>
@@ -289,7 +299,11 @@ Good news: CDAO has already proven vendor-agnostic approaches work at DoW scale
 <div class="abs-br m-6 text-sm opacity-50 font-bold">WE</div>
 
 <!--
-The defense environment makes all four types of lock-in worse. Classification limits your ability to evaluate alternatives. Clearances shrink the vendor pool. Mission-critical reliability makes everyone risk-averse. And long procurement cycles mean decisions made years ago still constrain you today. Even the DoW's own open source memo acknowledges that lock-in can happen with open-source software. But there is good news — CDAO has already proven this is solvable. And with that, I'll hand it over to Michael to discuss the policy mandates and technical solutions.
+The defense environment makes all four types of lock-in worse. Classification limits your ability to evaluate alternatives. Clearances shrink the vendor pool. Mission-critical reliability makes everyone risk-averse. And long procurement cycles mean decisions made years ago still constrain you today. Even the DoW's own open source memo acknowledges that lock-in can happen with open-source software.
+
+But there is good news. The Chief Digital and AI Office proved this is solvable with their Global Information Dominance Experiments — GIDE. CDAO built vendor-agnostic data integration layers that work across all operational systems regardless of platform, pulling from over 50 different data sources through standardized interfaces. Their architecture uses open standard APIs for data ingestion, containerized processing pipelines that run across different cloud providers, and open output formats consumable by multiple tools. The results: 99.5% availability across multiple vendor environments, processing latencies within tactical decision-making bounds, and improved cost efficiency through competitive sourcing. GIDE proves that vendor independence does not mean compromising operational effectiveness.
+
+And with that, I'll hand it over to Michael to discuss the policy mandates and technical solutions.
 -->
 
 ---
