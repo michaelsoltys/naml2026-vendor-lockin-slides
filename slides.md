@@ -370,7 +370,7 @@ Thanks William. So now that we understand the problem, what's being done about i
 
 ### <span style="color: #6b21a8;">Containerization</span>
 
-- Docker + Kubernetes
+- OCI-compliant containers + Kubernetes
 - Portable ML environments
 - Kubeflow for vendor-neutral workflows
 - Standardized GPU management
@@ -410,7 +410,7 @@ These are mature, production-ready technologies — not research projects
 <div class="abs-br m-6 text-sm opacity-50 font-bold">MS</div>
 
 <!--
-Here are the technical building blocks. Containerization through Docker and Kubernetes gives you portable ML environments — train on one platform, deploy on another. ONNX provides a universal model format so your trained models aren't locked to PyTorch or TensorFlow. MLflow handles experiment tracking without vendor tie-in. Apache Iceberg gives you vendor-neutral data lakes. Terraform lets you define your infrastructure once and deploy it anywhere. These aren't exotic — they're mature, production-ready technologies.
+Here are the technical building blocks. OCI-compliant containers — whether you use Docker, Podman, or containerd — running on Kubernetes give you portable ML environments. Train on one platform, deploy on another. ONNX provides a universal model format so your trained models aren't locked to PyTorch or TensorFlow. MLflow handles experiment tracking without vendor tie-in. Apache Iceberg gives you vendor-neutral data lakes. Terraform lets you define your infrastructure once and deploy it anywhere. These aren't exotic — they're mature, production-ready technologies.
 
 ANTICIPATED Q&A — "If AI coding assistants can refactor an entire AWS stack to Azure in a day, why bother with Terraform?"
 Great question. Three reasons. First, AI-assisted refactoring still needs a well-structured starting point — Terraform and IaC give you that declarative, diffable, reviewable structure that an AI tool can reason about. A tangled mess of CloudFormation scripts is harder for a human or an AI to migrate. Second, AI assistants reduce the cost of switching but don't eliminate the need to plan for it — you still need portable data formats, model export rights, and contractual exit provisions that no amount of code refactoring can solve. Third, and most importantly, AI coding tools actually strengthen the case for open standards: Terraform, ONNX, and containerization give AI assistants a common vocabulary to translate between platforms. The combination of open standards plus AI-assisted migration is more powerful than either alone.
@@ -481,7 +481,7 @@ This is the slide I want you to remember. If you take nothing else away from thi
 <v-clicks>
 
 <div class="border-l-4 border-blue-500 pl-3 py-1 mb-2">
-<strong>1. Containerized Delivery</strong> — Docker containers on any Kubernetes cluster, not tied to one cloud
+<strong>1. Containerized Delivery</strong> — OCI-compliant containers on any Kubernetes cluster, not tied to one cloud
 </div>
 
 <div class="border-l-4 border-yellow-500 pl-3 py-1 mb-2">
