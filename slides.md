@@ -137,7 +137,7 @@ How Has Lock-In Presented Itself in Past Architectures?
 
 - <strong style="color: #6b21a8;">2000s: Enterprise software</strong> — ERP and CRM vendors (SAP, Salesforce) created lock-in through deeply customized implementations and proprietary data models
 
-- <strong style="color: #6b21a8;">2010s: Cloud computing</strong> — AWS, Azure, and Google Cloud offered powerful services, but each with proprietary APIs, storage formats, and management tools
+- <strong style="color: #6b21a8;">2010s: Cloud computing</strong> — Lock-in came not from generic services (Linux VMs, object storage) but from *managed services* like AWS Lambda and Azure Functions — convenient, but dangerous to build around
 
 </v-clicks>
 
@@ -411,6 +411,9 @@ These are mature, production-ready technologies — not research projects
 
 <!--
 Here are the technical building blocks. Containerization through Docker and Kubernetes gives you portable ML environments — train on one platform, deploy on another. ONNX provides a universal model format so your trained models aren't locked to PyTorch or TensorFlow. MLflow handles experiment tracking without vendor tie-in. Apache Iceberg gives you vendor-neutral data lakes. Terraform lets you define your infrastructure once and deploy it anywhere. These aren't exotic — they're mature, production-ready technologies.
+
+ANTICIPATED Q&A — "If AI coding assistants can refactor an entire AWS stack to Azure in a day, why bother with Terraform?"
+Great question. Three reasons. First, AI-assisted refactoring still needs a well-structured starting point — Terraform and IaC give you that declarative, diffable, reviewable structure that an AI tool can reason about. A tangled mess of CloudFormation scripts is harder for a human or an AI to migrate. Second, AI assistants reduce the cost of switching but don't eliminate the need to plan for it — you still need portable data formats, model export rights, and contractual exit provisions that no amount of code refactoring can solve. Third, and most importantly, AI coding tools actually strengthen the case for open standards: Terraform, ONNX, and containerization give AI assistants a common vocabulary to translate between platforms. The combination of open standards plus AI-assisted migration is more powerful than either alone.
 -->
 
 ---
