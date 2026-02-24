@@ -152,7 +152,7 @@ Each technology wave created new opportunities for vendors to establish propriet
 <div class="abs-br m-6 text-sm opacity-50 font-bold">WE</div>
 
 <!--
-Vendor lock-in isn't new — it has been a recurring pattern across every major technology transition. In the mainframe era, you were locked to IBM's hardware and software. Client-server brought Microsoft and Oracle dominance through proprietary protocols. Enterprise software like SAP created lock-in through deep customization. Cloud computing repeated the pattern with proprietary APIs. Each wave, vendors found new ways to make switching prohibitively expensive. The question is: what makes the current AI wave different?
+Vendor lock-in isn't new — it has been a recurring pattern across every major technology transition. In the mainframe era, you were locked to IBM's hardware and software. Client-server brought Microsoft and Oracle dominance through proprietary protocols. Enterprise software like SAP created lock-in through deep customization. Cloud computing repeated the pattern — but here's a key insight: lock-in is a spectrum, not binary. In web design there's a concept called "stickiness" — pages designed to keep users coming back. Managed cloud services are sticky in the negative, spiderweb sense. Running your application as a container on an EC2 instance? No big deal to migrate. Building your application around Azure Functions? Good luck shifting that to Google Cloud. Generic services like Linux VMs and object storage are low on the lock-in spectrum; managed services like Lambda and Azure Functions are high. The question is: where does AI fall on that spectrum?
 -->
 
 ---
@@ -205,7 +205,7 @@ Unlike previous waves, AI lock-in extends into models themselves — not just in
 <div class="abs-br m-6 text-sm opacity-50 font-bold">WE</div>
 
 <!--
-What makes AI lock-in fundamentally different from previous technology waves? It's deeper. Previous lock-in was about interfaces, APIs, file formats. AI lock-in goes into the models themselves — into intellectual property and algorithmic competence. A model trained on a proprietary platform may literally not work the same way when you move it. And every major cloud provider has built comprehensive AI ecosystems designed to work beautifully together — but only within their own platform. Moving between them creates enormous friction.
+Continuing the spectrum idea: what makes AI lock-in fundamentally different is that it pushes you toward the sticky end at every stage of the development process — not just deployment. Previous lock-in was about interfaces, APIs, file formats — things you encountered at the infrastructure layer. AI lock-in goes deeper, into the models themselves — into intellectual property and algorithmic competence. A model trained on a proprietary platform may literally not work the same way when you move it. And lock-in accumulates across the entire pipeline: you pick a vendor's data storage, then their training environment, then their serving infrastructure, then their monitoring tools. Each choice is individually reasonable, but collectively they move you further along the lock-in spectrum until switching becomes prohibitively expensive. Every major cloud provider has built comprehensive AI ecosystems designed to work beautifully together — but only within their own platform.
 -->
 
 ---
@@ -410,7 +410,11 @@ These are mature, production-ready technologies — not research projects
 <div class="abs-br m-6 text-sm opacity-50 font-bold">MS</div>
 
 <!--
-Here are the technical building blocks. OCI-compliant containers — whether you use Docker, Podman, or containerd — running on Kubernetes give you portable ML environments. Train on one platform, deploy on another. ONNX provides a universal model format so your trained models aren't locked to PyTorch or TensorFlow. MLflow handles experiment tracking without vendor tie-in. Apache Iceberg gives you vendor-neutral data lakes. Terraform lets you define your infrastructure once and deploy it anywhere. These aren't exotic — they're mature, production-ready technologies.
+Here are the technical building blocks. OCI-compliant containers — whether you use Docker, Podman, or containerd — running on Kubernetes give you portable ML environments. Train on one platform, deploy on another. 
+
+And Kubernetes itself is a great example of the open-standards approach we're advocating: Google developed it internally as "Borg," then open-sourced it in 2014 and donated it to the Cloud Native Computing Foundation. Today AWS, Azure, and Google all offer managed Kubernetes — EKS, AKS, GKE — but because the core is open source and CNCF-governed, your workloads are portable across all of them. No single vendor controls the project. 
+
+ONNX provides a universal model format so your trained models aren't locked to PyTorch or TensorFlow. MLflow handles experiment tracking without vendor tie-in. Apache Iceberg gives you vendor-neutral data lakes. Terraform lets you define your infrastructure once and deploy it anywhere. These aren't exotic — they're mature, production-ready technologies.
 
 ANTICIPATED Q&A — "If AI coding assistants can refactor an entire AWS stack to Azure in a day, why bother with Terraform?"
 Great question. Three reasons. First, AI-assisted refactoring still needs a well-structured starting point — Terraform and IaC give you that declarative, diffable, reviewable structure that an AI tool can reason about. A tangled mess of CloudFormation scripts is harder for a human or an AI to migrate. Second, AI assistants reduce the cost of switching but don't eliminate the need to plan for it — you still need portable data formats, model export rights, and contractual exit provisions that no amount of code refactoring can solve. Third, and most importantly, AI coding tools actually strengthen the case for open standards: Terraform, ONNX, and containerization give AI assistants a common vocabulary to translate between platforms. The combination of open standards plus AI-assisted migration is more powerful than either alone.

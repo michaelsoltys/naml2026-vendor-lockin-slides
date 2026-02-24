@@ -20,15 +20,18 @@ cd "$SCRIPT_DIR"
 case "${1:-deploy}" in
 
   deploy|--deploy)
-    if ! git diff --quiet HEAD -- slides.md 2>/dev/null || [ -n "$(git ls-files --others --exclude-standard slides.md)" ]; then
-      git add slides.md
+    if ! git diff --quiet HEAD -- slides.md global-top.vue public/ 2>/dev/null || [ -n "$(git ls-files --others --exclude-standard -- slides.md global-top.vue public/)" ]; then
+      git add slides.md global-top.vue public/
       git commit -m "Update slides — $(date '+%Y-%m-%d %H:%M')"
       git push
       echo ""
       echo "Pushed. GitHub Actions will rebuild in ~1 minute."
-      echo "Site: $SITE_URL"
+      echo "Site:  $SITE_URL"
+      echo "Repo:  https://github.com/$REPO/actions"
     else
-      echo "No changes to slides.md — nothing to deploy."
+      echo "No changes to deploy."
+      echo "Site:  $SITE_URL"
+      echo "Repo:  https://github.com/$REPO/actions"
     fi
     ;;
 
