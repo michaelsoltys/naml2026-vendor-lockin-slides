@@ -20,8 +20,8 @@ cd "$SCRIPT_DIR"
 case "${1:-deploy}" in
 
   deploy|--deploy)
-    if ! git diff --quiet HEAD -- slides.md global-top.vue public/ 2>/dev/null || [ -n "$(git ls-files --others --exclude-standard -- slides.md global-top.vue public/)" ]; then
-      git add slides.md global-top.vue public/
+    if ! git diff --quiet HEAD -- slides-vendor-lockin.md global-top.vue public/ .github/ 2>/dev/null || [ -n "$(git ls-files --others --exclude-standard -- slides-vendor-lockin.md global-top.vue public/ .github/)" ]; then
+      git add slides-vendor-lockin.md global-top.vue public/ .github/
       git commit -m "Update slides — $(date '+%Y-%m-%d %H:%M')"
       git push
       echo ""
