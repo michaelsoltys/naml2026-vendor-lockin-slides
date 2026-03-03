@@ -2,7 +2,7 @@
 
 ## Slide 8 — Policy Mandate: Sec Hegseth Acquisition Reforms
 
-The idea of vendor lock-in is conceptually simple; but the implementation of a strategy to mitigate vendor lock-in is technically difficult. We have a white paper with all the details and references; please ask me if you would like a copy.
+The idea of vendor lock-in is conceptually simple; but the implementation of a strategy to mitigate vendor lock-in is technically difficult. We have a white paper with all the details and references; please ask me if you would like a copy. Captain Andrew Privette in the first keynote spoke about the PAE replacing PEO. 
 
 ## Slide 9 — Technical Strategies for Platform Independence
 
